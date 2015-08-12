@@ -1,5 +1,5 @@
-FROM debian:jessie
-MAINTAINER Bertrand Gouny <bertrand.gouny@osixia.net>
+FROM armhfbuild/debian:wheezy
+MAINTAINER Colinas Maoling "colinas.maoling@t-online.de"
 
 ADD . /container
 RUN /container/build.sh
