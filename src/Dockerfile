@@ -10,7 +10,6 @@ RUN apt-get install -y libpython2.7 python-setuptools python-pip
 RUN pip install pyinstaller
 #Noarm bootloader available, building based on: http://pythonhosted.org/PyInstaller/#building-the-bootloader
 WORKDIR /pyInstall
-RUN pwd
 RUN wget -P pyInstall https://pypi.python.org/packages/source/P/PyInstaller/PyInstaller-2.1.tar.gz#md5=248531f6fc94b0ffb02473321496d6d0
 RUN ls -la
 ADD deb.list /etc/apt/sources.list.d/lsb.list 
