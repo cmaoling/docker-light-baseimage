@@ -23,7 +23,7 @@ RUN wget -P /lsb http://http.debian.net/debian/pool/main/l/${lsbBuild}3/${lsbBui
 RUN tar -xvzf  /lsb/${lsbBuild}${lsbBuildVersion}.orig.tar.gz
 WORKDIR /lsb/${lsbBuild}${lsbBuildDir}/
 RUN ls -la .
-RUN /lsb/${lsbBuild}${lsbBuildDir}/make install
+RUN make install
 WORKDIR /pyInstall
 RUN ls -la
 RUN tar -xvzf PyInstaller-2.1.tar.gz
