@@ -7,6 +7,7 @@ RUN /bin/bash -c "apt-get update && apt-get upgrade -y && apt-get clean && apt-g
 RUN apt-get install -y libpython2.7 python-setuptools python-pip sudo
 RUN pip install pyinstaller
 RUN adduser --disabled-password --no-create-home --quiet --gecos "" dummy
-RUN ln -s /usr/local/lib/python2.7/dist-packages/PyInstaller/bootloader/Linux-32bit /usr/local/lib/python2.7/dist-packages/PyInstaller/bootloader/Linux-32bit-arm
-
-CMD ["bash", "sudo -u dummy /container/py_tool/build.sh"]
+#RUN ln -s /usr/local/lib/python2.7/dist-packages/PyInstaller/bootloader/Linux-32bit /usr/local/lib/python2.7/dist-packages/PyInstaller/bootloader/Linux-32bit-arm
+RUN wget https://pypi.python.org/packages/source/P/PyInstaller/PyInstaller-2.1.tar.gz#md5=248531f6fc94b0ffb02473321496d6d0
+RUN ls -la
+#CMD ["bash", "sudo -u dummy /container/py_tool/build.sh"]
