@@ -20,7 +20,8 @@ ENV lsbBuild="lsb-build-cc"
 ENV lsbBuildVersion="3_3.2.0"
 RUN wget -P /lsb http://http.debian.net/debian/pool/main/l/${lsbBuild}3/${lsbBuild}${lsbBuildVersion}.orig.tar.gz
 RUN tar -xvzf  /lsb/${lsbBuild}${lsbBuildVersion}.orig.tar.gz
-WORKDIR /lsb/${lsbBuild:2}/
+RUN /bin/bash -c "lsbBuildDir=${lsbBuild:2}"
+WORKDIR /lsb/${lsbBuildDir}/
 RUN ls -la .
 #RUN /lsb/${lsbBuild}/make install
 #RUN tar -xvzf PyInstaller-2.1.tar.gz
