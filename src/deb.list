@@ -1,1 +1,1 @@
-deb http://ftp.linux-foundation.org/pub/lsb/repositories/debian lsb-4.0 main
+deb ftp.us.debian.org squeeze/main source
