@@ -16,9 +16,10 @@ RUN apt-cache policy lsb
 RUN apt-get install -y lsb
 RUN mkdir /lsb
 WORKDIR /lsb
-ENV lsbBuild="lsb-build-cc3_3.2.0"
-RUN wget -P /lsb http://http.debian.net/debian/pool/main/l/lsb-build-cc3/${lsbBuild}.orig.tar.gz
-RUN tar -xvzf  /lsb/${lsbBuild}.orig.tar.gz
+ENV lsbBuild="lsb-build-cc"
+ENV lsbBuildVersion="3.2.0"
+RUN wget -P /lsb http://http.debian.net/debian/pool/main/l/${lsbBuild}3/${lsbBuild}3_${lsbBuildVersion}.orig.tar.gz
+RUN tar -xvzf  /lsb/${lsbBuild}-${lsbBuildVersion}.orig.tar.gz
 WORKDIR /lsb/${lsbBuild}/
 RUN ls -la .
 #RUN /lsb/${lsbBuild}/make install
