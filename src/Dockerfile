@@ -11,15 +11,18 @@ RUN pip install pyinstaller
 #Noarm bootloader available, building based on: http://pythonhosted.org/PyInstaller/#building-the-bootloader
 WORKDIR /pyInstall
 RUN pwd
-RUN wget https://pypi.python.org/packages/source/P/PyInstaller/PyInstaller-2.1.tar.gz#md5=248531f6fc94b0ffb02473321496d6d0
+RUN wget -P pyInstall https://pypi.python.org/packages/source/P/PyInstaller/PyInstaller-2.1.tar.gz#md5=248531f6fc94b0ffb02473321496d6d0
 RUN ls -la
 ADD deb.list /etc/apt/sources.list.d/lsb.list 
-RUN apt-get install -y lsb-4.0
+RUN apt-cache policy lsb
+RUN apt-get install -y lsb
 WORKDIR /lsb
-RUN pwd
-RUN wget http://http.debian.net/debian/pool/main/l/lsb-build-cc3/lsb-build-cc3_3.2.0.orig.tar.gz
+ENV lsbBuild="lsb-build-cc3_3.2.0"
+RUN wget -P /lsb http://http.debian.net/debian/pool/main/l/lsb-build-cc3/${lsbBuild}.orig.tar.gz
+RUN tar -xvzf  /lsb/${lsbBuild}.orig.tar.gz
+WORKDIR /lsb/${lsbBuild}/
 RUN ls -la
-
+RUN /lsb/${lsbBuild}/make install
 #RUN tar -xvzf PyInstaller-2.1.tar.gz
 #RUN apt-get install -y lsb
 #RUN ls -la 
