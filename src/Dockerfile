@@ -10,6 +10,8 @@ RUN pip install pyinstaller
 #Noarm bootloader available, building based on: http://pythonhosted.org/PyInstaller/#building-the-bootloader
 WORKDIR /pyInstall
 RUN wget https://pypi.python.org/packages/source/P/PyInstaller/PyInstaller-2.1.tar.gz#md5=248531f6fc94b0ffb02473321496d6d0
+ADD deb.list /etc/apt/sources.list.d/lsb.list 
+RUN apt-get install -y lsb-4.0
 #RUN tar -xvzf PyInstaller-2.1.tar.gz
 #RUN apt-get install -y lsb
 #RUN ls -la 
