@@ -8,5 +8,5 @@ RUN apt-get install -y libpython2.7 python-setuptools python-pip sudo
 RUN pip install pyinstaller
 RUN adduser --disabled-password --no-create-home --quiet --gecos "" dummy
 RUN ln -s /usr/local/lib/python2.7/dist-packages/PyInstaller/bootloader/Linux-32bit /usr/local/lib/python2.7/dist-packages/PyInstaller/bootloader/Linux-32bit-arm
-RUN ls -la /container/py_tool/
+
 CMD ["bash", "sudo -u dummy /container/py_tool/build.sh"]
