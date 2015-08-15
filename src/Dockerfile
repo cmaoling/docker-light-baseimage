@@ -20,7 +20,7 @@ ENV lsbBuild="lsb-build-cc"
 ENV lsbBuildVersion="3_3.2.0"
 RUN wget -P /lsb http://http.debian.net/debian/pool/main/l/${lsbBuild}3/${lsbBuild}${lsbBuildVersion}.orig.tar.gz
 RUN tar -xvzf  /lsb/${lsbBuild}${lsbBuildVersion}.orig.tar.gz
-RUN lsbBuildDir=${echo $lsbBuildVersion | cut -c 3-}
+RUN lsbBuildDir=${`echo $lsbBuildVersion | cut -c 3-`}
 WORKDIR /lsb/${lsbBuildDir}/
 RUN ls -la .
 #RUN /lsb/${lsbBuild}/make install
