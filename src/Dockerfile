@@ -27,8 +27,8 @@ RUN make install
 WORKDIR /pyInstall
 RUN ls -la
 RUN tar -xvzf PyInstaller-2.1.tar.gz
-#WORKDIR /pyInstall/PyInstaller-2.1/bootloader
-#RUN python ./waf configure build install
+WORKDIR /pyInstall/PyInstaller-2.1/bootloader
+RUN python ./waf configure build install
 #RUN ls -la /opt/lsb/bin/
 #
 ##pyInstaller may not be called as root, creating dummy account
