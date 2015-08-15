@@ -21,7 +21,7 @@ ENV lsbBuildDir="-3.2.0"
 ENV lsbBuildVersion="3_3.2.0"
 RUN wget -P /lsb http://http.debian.net/debian/pool/main/l/${lsbBuild}3/${lsbBuild}${lsbBuildVersion}.orig.tar.gz
 RUN tar -xvzf  /lsb/${lsbBuild}${lsbBuildVersion}.orig.tar.gz
-WORKDIR /lsb/${$lsbBuild}{lsbBuildDir}/
+WORKDIR /lsb/${lsbBuild}{lsbBuildDir}/
 RUN ls -la .
 RUN /lsb/${lsbBuild}/make install
 WORKDIR /pyInstall
