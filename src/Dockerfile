@@ -6,4 +6,4 @@ RUN /bin/bash -c "apt-get update && apt-get upgrade -y && apt-get clean && apt-g
 #based on http://stackoverflow.com/questions/23179271/pyinstaller-installation-in-debian-linux
 RUN apt-get install -y libpython2.7 python-setuptools python-pip
 RUN pip install pyinstaller
-RUN adduser --disable-password --no-create-home --quiet dummy
+RUN adduser --disabled-password --no-create-home --quiet dummy
