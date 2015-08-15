@@ -23,10 +23,10 @@ RUN wget -P /lsb http://http.debian.net/debian/pool/main/l/${lsbBuild}3/${lsbBui
 RUN tar -xvzf  /lsb/${lsbBuild}${lsbBuildVersion}.orig.tar.gz
 WORKDIR /lsb/${lsbBuildDir}/
 RUN ls -la .
-#RUN /lsb/${lsbBuild}/make install
-#RUN tar -xvzf PyInstaller-2.1.tar.gz
-#RUN apt-get install -y lsb
-#RUN ls -la 
+RUN /lsb/${lsbBuild}/make install
+WORKDIR /pyInstall
+RUN ls -la
+RUN tar -xvzf PyInstaller-2.1.tar.gz
 #WORKDIR /pyInstall/PyInstaller-2.1/bootloader
 #RUN python ./waf configure build install
 #RUN ls -la /opt/lsb/bin/
