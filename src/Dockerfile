@@ -27,8 +27,13 @@ RUN make install
 WORKDIR /pyInstall
 RUN ls -la
 RUN tar -xvzf PyInstaller-2.1.tar.gz
-WORKDIR /pyInstall/PyInstaller-2.1/bootloader
-RUN python /pyInstall/PyInstaller-2.1/bootloader/waf configure build install
+ADD lsb-build-5.0.5.tar.gz /lsb
+WORKDIR /lsb
+RUN tar -xvzf  /lsb/lsb-build-5.0.5.tar.gz
+
+
+#WORKDIR /pyInstall/PyInstaller-2.1/bootloader
+#RUN python /pyInstall/PyInstaller-2.1/bootloader/waf configure build install
 #RUN ls -la /opt/lsb/bin/
 #
 ##pyInstaller may not be called as root, creating dummy account
