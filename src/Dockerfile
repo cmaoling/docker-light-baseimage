@@ -27,9 +27,12 @@ RUN make install
 WORKDIR /pyInstall
 RUN ls -la
 RUN tar -xvzf PyInstaller-2.1.tar.gz
+# from ftp://ftp.linuxfoundation.org/pub/lsb/snapshots/build_env/lsb-build-5.0.5-0.20150815.3.src.rpm
 ADD lsb-build-5.0.5.tar.gz /lsb
 WORKDIR /lsb
-RUN tar -xvzf  /lsb/lsb-build-5.0.5.tar.gz
+#RUN tar -xvzf  /lsb/lsb-build-5.0.5.tar.gz
+#WORKDIR /lsb/lsb-build-5.0.5/lsbdev-cc/
+#RUN make install
 
 
 #WORKDIR /pyInstall/PyInstaller-2.1/bootloader
