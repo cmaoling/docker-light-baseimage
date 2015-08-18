@@ -3,7 +3,7 @@ MAINTAINER Colinas Maoling "colinas.maoling@t-online.de"
 
 ENV DEBIAN_FRONTEND noninteractive
 RUN /bin/bash -c "apt-get update && apt-get upgrade -y && apt-get clean && apt-get autoremove"
-RUN apt-get install -y python
+RUN apt-get install -y python3
 
 ADD . /container
 #RUN /container/build.sh
