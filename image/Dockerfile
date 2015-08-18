@@ -6,6 +6,6 @@ RUN /bin/bash -c "apt-get update && apt-get upgrade -y && apt-get clean && apt-g
 RUN apt-get install -y python
 
 ADD . /container
-RUN /container/build.sh
+#RUN /container/build.sh
 
-CMD ["/container/tool/run"]
+#CMD ["/container/tool/run"]
