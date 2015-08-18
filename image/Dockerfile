@@ -6,6 +6,7 @@ RUN /bin/bash -c "apt-get update && apt-get upgrade -y && apt-get clean && apt-g
 RUN apt-get install -y python3 python-pip python3-yaml runit
 VOLUME /container
 ADD . /container
+RUN chmod 750 /container/tool/py_tool/setuser /container/tool/py_tool/my_init
 #RUN /container/build.sh
 
 #CMD ["/container/tool/run"]
