@@ -7,6 +7,7 @@ RUN apt-get install -y python3 python-pip python3-yaml runit
 VOLUME /container
 ADD . /container
 RUN chmod 750 /container/tool/py_tool/setuser /container/tool/py_tool/my_init
+RUN ls -la /container/tool/py_tool
 RUN /container/build.sh
 
 CMD ["/container/tool/run"]
